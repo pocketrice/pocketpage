@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>A Smattering of Nonsense</title>
+<link rel="icon" type="image/x-icon" href="assets/favi.png">
+<style>
+@font-face {
+    font-family: "DM Mono";
+    src: url("assets/fonts/dmmono.ttf");
+}
+
+@font-face {
+    font-family: "99% Occupy";
+    src: url("assets/fonts/99occupy.ttf");
+}
+
+@font-face {
+    font-family: "TF2 Build";
+    src: url("assets/fonts/tf2build.ttf");
+}
+
+@font-face {
+    font-family: "TF2 Secondary";
+    src: url("assets/fonts/tf2second.ttf");
+}
+
+
+header {
+    font-family: "99% Occupy", Helvetica;
+    color: #9d9dcf;
+    font-size: 20px;
+    background-image: linear-gradient(to top, #6769b535, #6769b530);
+    margin: 0 0 50px 0 !important;
+    padding: 10px 30px;
+    backdrop-filter: blur(18px);
+}
+
+#rng_comment {
+    color: #93BFCD;
+}
+
+#nothead {
+padding: 20px 30px;
+}
+
+
+body, html {
+margin: 0;
+padding: 0;
+height: 100%;
+width: 100%;
+}
+
+
+
+video {
+position: fixed;
+min-width: 50%;
+width: 120px;
+min-height: 50%;
+z-index: -99;
+}
+
+div.gm {
+border-radius: 12px 19px;
+background-image: linear-gradient(to bottom, #6769b518, #6769b523);
+backdrop-filter: blur(15px);
+padding: 18px 20px;
+font-family: "DM Mono";
+font-size: 14px;
+color: #aaabcd;
+}
+
+#tf2 {
+border-radius: 30px;
+background-image: linear-gradient(to bottom, #6769b525, #6769b530);
+backdrop-filter: blur(25px);
+padding: 20px 0;
+margin: 0px 500px;
+text-align: center;
+position: relative;
+left: 300px;
+}
+
+#tf2 h3 {
+font-family: "TF2 Build";
+color: #8847FF;
+}
+
+#tf2 h4 {
+font-family: "TF2 Secondary";
+color: #736B5F;
+position: relative;
+top: -10px;
+}
+
+#tf2 p {
+font-family: "TF2 Secondary";
+color: #E9E2CC;
+}
+
+#tfbg {
+position: absolute;
+z-index: -1;
+margin: 12px 100px;
+padding: 68px;
+border-radius: 15px;
+background-image: linear-gradient(to bottom, #6769b515, #6769b510);
+}
+
+
+</style>
+
+</head>
+<body>
+<video autoplay muted loop class="ebbg" style="left: 0; top: 0;">
+    <source src="assets/ebbg.mp4" type="video/mp4">
+</video>
+<video autoplay muted loop class="ebbg" style="left: 50%; top: 0;">
+    <source src="assets/ebbg.mp4" type="video/mp4">
+</video>
+<video autoplay muted loop class="ebbg" style="left: 0; top: 50%;">
+    <source src="assets/ebbg.mp4" type="video/mp4">
+</video>
+<video autoplay muted loop class="ebbg" style="left: 50%; top: 50%;">
+    <source src="assets/ebbg.mp4" type="video/mp4">
+</video>
+<header>
+<h2 id="rng_text">this = new Homepage("A Smattering of Nonsense");</h2>
+<h4 id="rng_comment"><em>// Lucas Xie's CSE 2221 homepage</em></h4>
+</header>
+<div id="nothead">
+<div class="gm">
+<p>Hallo! Welcome to my lil' corner of the internet. Sit and stay awhile, if you'd like!
+</p></div>
+<!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7AD0HyWHuDjcS74zGAzOhO?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7eoVco4yfdISkA3oDM7HBt?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5hFWzU8qaNlzffRGINsy1q?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
+</div>
+
+<div id="tf2">
+<div id="tfbg"></div>
+<img src="assets/engiewrench.png" width="150px"></img>
+<h3>ENGIE'S WRENCH</h3>
+<h4>Level 3 Wrench</h4>
+<p>"Outta mah way! Outta mah way!"</p>
+</div>
+
+
+
+<script>
+const BG_SPEED = 0.7;
+
+let bgvids = document.getElementsByClassName("ebbg");
+for (var i = 0; i < bgvids.length; i++) {
+	bgvids[i].playbackRate = BG_SPEED;
+}
+</script>
+
+</body>
+</html>
