@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>A Smattering of Nonsense</title>
     <link rel="icon" type="image/x-icon" href="assets/favi.png">
-    <style>
+    <style type="text/css">
         @font-face {
             font-family: "DM Mono";
             src: url("assets/fonts/dmmono.ttf");
@@ -62,9 +62,11 @@
             padding: 0;
             height: 100%;
             width: 100%;
+            scrollbar-width: thin;
         }
 
-        video {
+
+        .ebbg {
             position: fixed;
             min-width: 50%;
             width: 120px;
@@ -80,17 +82,19 @@
             font-family: "DM Mono";
             font-size: 14px;
             color: #aaabcd;
+            z-index: 3;
         }
 
         #tf2 {
             border-radius: 30px;
             background-image: linear-gradient(to bottom, #6769b525, #6769b530);
             backdrop-filter: blur(25px);
-            padding: 20px 0;
-            margin: 0px 500px;
+            padding: 30px 40px;
             text-align: center;
-            position: relative;
-            left: 300px;
+            position: absolute;
+            left: 100px;
+            top: 1470 px;
+            z-index: -99;
         }
 
         #tf2 h3 {
@@ -112,8 +116,9 @@
 
         #tfbg {
             position: absolute;
+            left: 90px;
+            top: 35px;
             z-index: -1;
-            margin: 12px 100px;
             padding: 68px;
             border-radius: 15px;
             background-image: linear-gradient(to bottom, #6769b515, #6769b510);
@@ -131,96 +136,206 @@
             padding: 5px 15px;
         }
 
+        :root {
+            color-scheme: dark;
+        }
+
+        #spacer {
+            margin-top: 100px;
+        }
+
+        #spacer2 {
+            margin-top: 500px;
+        }
+
+        #avgprog {
+            position: relative;
+            left: 70%;
+            top: 50px;
+            transform: rotate(5deg);
+        }
+
+        table {
+            font-family: "Dina";
+            color: #9394B7;
+            padding: 20px 15px;
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+        }
+
+
+        table tr:not(:first-child) td {
+            border: 0.5px solid #9394B7;
+            padding: 10px;
+            text-align: center;
+            margin: 3px;
+        }
+
+
+
+        a {
+            color: #60B7B6;
+        }
+
+        footer {
+            margin: 120px 0 10px 0;
+            text-align: center;
+        }
+
+        footer * {
+            margin: 20px 15px 0 15px;
+        }
+
+        button#magicbtn {
+            font-family: "Dina";
+            padding: 3px 10px;
+            color: #B3B1E6;
+            position: relative;
+            top: -12px;
+        }
+
+        #incr {
+            font-family: "Dina";
+            position: relative;
+            top: -2px;
+        }
+
     </style>
+    <script>
+                var isMagic = true;
+                const BG_SPEED = 0.7;
 
-</head>
+                let bgvids = document.getElementsByClassName("ebbg");
+                for (var i = 0; i < bgvids.length; i++) {
+                    bgvids[i].playbackRate = BG_SPEED;
+                }
+
+                function toggleMagic() {
+                    isMagic = !isMagic;
+                    console.log(isMagic);
+
+                    let bgvids = document.getElementsByClassName("ebbg");
+                    for (var i = 0; i < bgvids.length; i++) {
+                        if (isMagic) bgvids[i].play();
+                        else bgvids[i].pause();
+                    }
+                }
+    </script>
+</head> <!-- todo: 
+            * audio player (play from All The Songs!)
+            * TF2 achievement (click on wrench)
+            * lil project banners (kryptos style)
+            * is that a geode? + CCS page
+            * dev console (press `)
+            * mother 3 battle (you battle engineer) + annabound in-browser?
+            * schucannons access page
+            * obligatory xkcd page
+            * hacker news custom reader
+            * gdweb access point!!
+            * calendar thingy, mm, tumblr bit
+            * custom tetris bc i need it
+            * gallery + The Vault (mc)
+            * pocket fortress (tf2 in browser w gba graphics?)
+            * quick text editor
+            * tools (fabric mod stuffs, file conversion, resize stuffs)
+            * scrapbooking feature (I find stuff, I can quickly save it there)
+            * inside jokes (is that a geode? its a big rink mate)
+
+            try some sorta "tunnel" system - not necessarily explicit pages, but you click around and you get places!! (^p^)/
+        -->
 <body>
-    <video autoplay muted loop class="ebbg" style="left: 0; top: 0;">
+    <video autoplay="true" muted="true" loop="true" class="ebbg" style="left: 0; top: 0;">
         <source src="assets/ebbg.mp4" type="video/mp4">
-        </video>
-        <video autoplay muted loop class="ebbg" style="left: 50%; top: 0;">
-            <source src="assets/ebbg.mp4" type="video/mp4">
-            </video>
-            <video autoplay muted loop class="ebbg" style="left: 0; top: 50%;">
-                <source src="assets/ebbg.mp4" type="video/mp4">
-                </video>
-                <video autoplay muted loop class="ebbg" style="left: 50%; top: 50%;">
-                    <source src="assets/ebbg.mp4" type="video/mp4">
-                    </video>
-                    <header>
-                        <h2 id="rng_text">this = new Homepage("A Smattering of Nonsense");</h2>
-                        <h4 id="rng_comment"><em>// Lucas Xie's CSE 2221 homepage</em></h4>
-                    </header>
-                    <div id="nothead">
-                        <div class="gm">
-                            <p>Hi! Welcome to my lil' corner of the internet. Sit and stay awhile, if you please!
-                            </p></div>
+    </video>
+    <video autoplay="true" muted="true" loop="true" class="ebbg" style="left: 50%; top: 0;">
+        <source src="assets/ebbg.mp4" type="video/mp4">
+    </video>
+    <video autoplay="true" muted="true" loop="true" class="ebbg" style="left: 0; top: 50%;">
+        <source src="assets/ebbg.mp4" type="video/mp4">
+    </video>
+    <video autoplay="true" muted="true" loop="true" class="ebbg" style="left: 50%; top: 50%;">
+        <source src="assets/ebbg.mp4" type="video/mp4">
+    </video>
+    <header>
+        <h2 id="rng_text">this = new Homepage("A Smattering of Nonsense");</h2>
+        <h4 id="rng_comment">// Try out the Lando Watch!</h4>
+    </header>
+        <div id="nothead">
+            <div class="gm">
+                <p>Hi! Welcome to my lil' corner of the internet. Sit and stay awhile, if you please!
+                </p>
+            </div>
 
-<!--
-<iframe style="border-radius:12px" class="sp" src="https://open.spotify.com/embed/track/7AD0HyWHuDjcS74zGAzOhO?utm_source=generator" width="25%" height="152" frameBorder="0" allowfullscreen="" style="font-family: 'Dina'" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7eoVco4yfdISkA3oDM7HBt?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5hFWzU8qaNlzffRGINsy1q?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
+            <table>
+                <tr>
+                    <td>Track</td>
+                    <td>Runtime</td>
+                    <td>Thoughts</td>
+                </tr>
 
-<table>
-<tr>
-<td>Track</td>
-<td>Runtime</td>
-<td>Thoughts</td>
-</tr>
+                <tr>
+                    <td><a href="https://open.spotify.com/track/7AD0HyWHuDjcS74zGAzOhO" target="_blank">Choro</a><img src="assets/choro.png" width=150px alt="Stone Flower album art"></td>
+                    <td>2:08</td>
+                    <td>I'm a fan of bossa nova and the like, so I've enjoyed a lot of Jobim's works. <em>Stone Flower</em> is an album that captures a deep blend of flitting curiosity and sentimental warmth.</td>
+                </tr>
 
-<tr>
-<td>
+                <tr>
+                    <td><a href="https://open.spotify.com/track/62LMgHQvo7JmH1TYbnqJyj" target="_blank">SUNDROPS</a><img src="assets/sundrops.png" width=150px alt="AN INSATIABLE HIGH album art"></td>
+                    <td>5:10</td>
+                    <td>I found Takanaka's work through a long autumn afternoon spent building a cabinet (more on that sometime later). His music is of an unusually bright joy, lighter than sunshine. Not sure how that ties back to cabinet-making, but I'll find something.</td>
+                </tr>
 
+                <tr>
+                    <td><a href="https://open.spotify.com/album/5FrjDW96mCYw9ECc74c637" target="_blank">F.I.L.O.</a><img src="assets/filo.png" width=150px alt="Metaphorical Music album art"></td>
+                    <td>3:31</td>
+                    <td>Nujabes does a good job of falling into the captivating force of boom bap without being too overbearing (lookin' at you, pop rappers) — I like the cold guitar in the background. Also, obligatory queues reference.</td>
+            </table>
+            <div id="spacer"></div>
+                <div class="gm">
+                    <p>A few of my favorite experiences (dated by release) ...</p>
+                </div>
+                <ul>
+                    <li>Kirby Air Ride (2003)</li>
+                    <li>Ace Attorney: Trials and Tribulations (2004)</li>
+                    <li>MOTHER 3 (2006)</li>
+                    <li>Team Fortress 2 (2007)</li>
+                    <li>'The Three-Body Problem' (2008)</li>
+                    <li>Asleep 2 (2017)</li>
+                    <li>Eastward (2021)</li>
+                </ul>
+                <div id="tf2">
+                    <div id="tfbg"></div>
+                    <img src="assets/engiewrench.png" alt="Engineer's Wrench from TF2" width="150px">
+                    <h3>ENGIE'S WRENCH</h3>
+                    <h4>Level 3 Wrench</h4>
+                    <p>"Outta mah way! Outta mah way!"</p>
+                </div>
 
+                <div id="spacer2"></div> <!-- todo: custom css var for spacing -->
+                    <div class="gm">
+                        <p>Some things I've made (not real sites)</p>
+                    </div>
+                    <ul>
+                        <li>A messy collage of a website with info on cryptography ("Kryptos")</li>
+                        <li>A sleek webstore purporting to sell HTML elements ("The Hypertext Warehouse")</li>
+                        <li>A very... fair gambling game ("Gambler's Delight")</li>
+                        <li>A shameless ripoff of Mario 64's title screen ("Average Programmer 64")
+                        </li>
+                        <br><br>
+                        <em>..and many more unfinished projects that will never see the light of day!</em>
+                    </ul>
 
-</tr>
-</table>
-
-
-<div class="gm">
-<p>A few of my favorite experiences (dated by release) ...</p>
-</div>
-<ul>
-<li>Kirby Air Ride (2003)</li>
-<li>Ace Attorney: Trials and Tribulations (2004)</li>
-<li>MOTHER 3 (2006)</li>
-<li>Team Fortress 2 (2007)</li>
-<li>'The Three-Body Problem' (2008)</li>
-<li>Asleep 2 (2017)</li>
-<li>Eastward (2021)</li>
-</ul>
-
-<div class="gm">
-<p>Some things I've made (not real sites)...</p>
-</div>
-<ul>
-A messy collage of a website with info on cryptography ("Kryptos")
-A sleek webstore purporting to sell HTML elements ("The Hypertext Warehouse")
-A very... fair gambling game ("Gambler's Delight")
-An app-but-actually-website for tracking dehydration ("Droplet")
-
-...and many more unfinished projects!
-</ul>
-<div id="tf2">
-    <div id="tfbg"></div>
-    <img src="assets/engiewrench.png" width="150px"></img>
-    <h3>ENGIE'S WRENCH</h3>
-    <h4>Level 3 Wrench</h4>
-    <p>"Outta mah way! Outta mah way!"</p>
-</div>
-
-<iframe src="https://incr.easrng.net/badge?key=pocketpage" style="background: url(https://incr.easrng.net/bg.gif)" title="increment badge" width="88" height="31" frameborder="0"></iframe>
-</div>
-<script>
-    const BG_SPEED = 0.7;
-
-    let bgvids = document.getElementsByClassName("ebbg");
-    for (var i = 0; i < bgvids.length; i++) {
-       bgvids[i].playbackRate = BG_SPEED;
-    }
-
-
-</script>
-
-</body>
+                    <div id="avgprog">
+                        <img src="assets/avgprog-vis.svg" alt="Adobe Stock image of old yellowish computer monitor" style="pointer-events: none" width="300px">
+                        <video controls="true" loop="true" style="position:relative; left: -270px; top: -50px; z-index: -1" width=240px>
+                            <source src="assets/avgprog.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <footer>
+                    <button id="magicbtn" type="button" onclick="toggleMagic()">Toggle Magic</button>
+                    <img id="welcome" src="assets/welcome.gif" width="250px" alt="90s welcome marquee">
+                    <iframe id="incr" src="https://incr.easrng.net/badge?key=pocketpage" style="background: url(https://incr.easrng.net/bg.gif)" title="increment badge" width="88" height="31" frameborder="0"></iframe>
+                </footer>
+            </div>
+    </body>
 </html>
